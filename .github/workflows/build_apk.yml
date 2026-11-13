@@ -20,7 +20,7 @@ jobs:
           channel: 'stable'
       - name: Create Platform Folders & Get Dependencies
         run: |
-          flutter create --platforms=android .
+          flutter create --platforms=android --project-name market_regime_tracker .
           flutter pub get
       - name: Build APK
         run: flutter build apk --release
