@@ -15,3 +15,5 @@ flutter create --platforms=android .
 flutter pub get
 flutter build apk --release
 ```
+⚠️ Sorumluluk Reddi (Disclaimer)
+Bu depo yalnızca eğitim, bilgilendirme ve araştırma amaçlıdır. Bu botlar tarafından üretilen komut dosyaları ve analizler hiçbir şekilde finansal, yatırım veya alım-satım tavsiyesi teşkil etmez. Her zaman kendi araştırmanızı yapın ve herhangi bir finansal karar almadan önce lisanslı bir uzmana danışın.
