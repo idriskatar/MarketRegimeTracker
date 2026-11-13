@@ -16,11 +16,16 @@ jobs:
           java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
           channel: 'stable'
-      - name: Create Platform Folders & Get Dependencies
+      - name: Create Platform Folders & Fix Kotlin Version
         run: |
           flutter create --platforms=android --project-name market_regime_tracker .
+          if [ -f android/settings.gradle ]; then
+            sed -i 's/id "org.jetbrains.kotlin.android" version "[^"]*"/id "org.jetbrains.kotlin.android" version "2.0.21"/g' android/settings.gradle
+          fi
+          if [ -f android/settings.gradle.kts ]; then
+            sed -i 's/id("org.jetbrains.kotlin.android") version "[^"]*"/id("org.jetbrains.kotlin.android") version "2.0.21"/g' android/settings.gradle.kts
+          fi
           flutter pub get
       - name: Build APK
         run: flutter build apk --release
